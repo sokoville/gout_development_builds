@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://drsrpo8fhem3n"]
+
+[ext_resource type="FontFile" uid="uid://dgvx8pd2l5xfn" path="res://resources/fonts/Revalia-Regular.ttf" id="1_qr75c"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.670588, 0.172549, 0.172549, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.34902)
+RichTextLabel/font_sizes/normal_font_size = 35
+RichTextLabel/fonts/normal_font = ExtResource("1_qr75c")

@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cy4h3nm6n4xvf"]
+
+[ext_resource type="FontFile" uid="uid://d33g1l55trbvy" path="res://resources/fonts/UbuntuMono-Regular.ttf" id="1_xwoof"]
+
+[resource]
+RichTextLabel/colors/font_shadow_color = Color(0.141176, 0.141176, 0.141176, 0.913725)
+RichTextLabel/font_sizes/normal_font_size = 10
+RichTextLabel/fonts/normal_font = ExtResource("1_xwoof")

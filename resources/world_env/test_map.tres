@@ -1,0 +1,5 @@
+[gd_resource type="Environment" format=3 uid="uid://b61umlxxqrm84"]
+
+[resource]
+fog_enabled = true
+fog_density = 0.02

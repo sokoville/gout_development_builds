@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cljr12r3hfnsk"
+path="res://.godot/imported/vent_straight_double.obj-6349b5bcc06416580dd18f5c5db5d184.mesh"
+
+[deps]
+
+files=["res://.godot/imported/vent_straight_double.obj-6349b5bcc06416580dd18f5c5db5d184.mesh"]
+
+source_file="res://meshes/vent_straight_double.obj"
+dest_files=["res://.godot/imported/vent_straight_double.obj-6349b5bcc06416580dd18f5c5db5d184.mesh", "res://.godot/imported/vent_straight_double.obj-6349b5bcc06416580dd18f5c5db5d184.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

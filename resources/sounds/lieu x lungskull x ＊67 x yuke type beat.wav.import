@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cap7t7d6uy3k2"
+path="res://.godot/imported/lieu x lungskull x ＊67 x yuke type beat.wav-0360c297b867f28ebc9582aa1c195c64.sample"
+
+[deps]
+
+source_file="res://resources/sounds/lieu x lungskull x ＊67 x yuke type beat.wav"
+dest_files=["res://.godot/imported/lieu x lungskull x ＊67 x yuke type beat.wav-0360c297b867f28ebc9582aa1c195c64.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

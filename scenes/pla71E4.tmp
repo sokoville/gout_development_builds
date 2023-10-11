@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://tt2kdltx42jm"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1mysk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61e0k"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="SphereMesh" id="SphereMesh_3p2ot"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rs3lh"]
+radius = 0.3
+height = 1.8
+radial_segments = 8
+rings = 1
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_1mysk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_61e0k")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Camera" type="Camera3D" parent="Head"]
+cull_mask = 1048573
+current = true
+
+[node name="InteractionCheck" type="RayCast3D" parent="Head/Camera"]
+target_position = Vector3(0, 0, -2)
+
+[node name="Bullet" type="RayCast3D" parent="Head/Camera"]
+target_position = Vector3(0, 0, -50)
+collision_mask = 5
+
+[node name="Hand" type="Node3D" parent="Head/Camera"]
+transform = Transform3D(-0.052328, 0.000913388, 0.998629, 0.0174524, 0.999848, 0, -0.998477, 0.0174285, -0.0523359, 0.315, -0.275, -0.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera/Hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -5.82077e-11, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("SphereMesh_3p2ot")
+
+[node name="ViewmodelContainer" type="SubViewportContainer" parent="Head/Camera/Hand"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ViewmodelPort" type="SubViewport" parent="Head/Camera/Hand/ViewmodelContainer"]
+transparent_bg = true
+handle_input_locally = false
+canvas_cull_mask = 4293918722
+size = Vector2i(900, 600)
+render_target_update_mode = 4
+
+[node name="GunCam" type="Camera3D" parent="Head/Camera/Hand/ViewmodelContainer/ViewmodelPort"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+cull_mask = 2
+fov = 60.0
+
+[node name="HeadCheck" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_rs3lh")

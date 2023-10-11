@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://o55nt3dm3pet"]
+
+[ext_resource type="Script" path="res://scripts/test_enemy.gd" id="1_2xh62"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6afpw"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iqyju"]
+radius = 0.3
+height = 1.8
+radial_segments = 8
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlsx4"]
+albedo_color = Color(0.819608, 0.301961, 0.301961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6rn34"]
+
+[node name="TestEnemy" type="CharacterBody3D"]
+collision_layer = 4
+up_direction = Vector3(0.948683, 0.316228, 0)
+script = ExtResource("1_2xh62")
+metadata/enemy = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6afpw")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_iqyju")
+surface_material_override/0 = SubResource("StandardMaterial3D_qlsx4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.265878, 0, 0, 0, 0.152094, 0, 0, 0, 0.193437, 0, 0.596672, -0.3)
+mesh = SubResource("BoxMesh_6rn34")
