@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bvche6ui8tqw" path="res://textures/bullet_hole.png" id="1_e3ejs"]
 
 [node name="BulletHole" type="Decal"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 7.49001)
 size = Vector3(0.1, 0.1, 0.1)
 texture_albedo = ExtResource("1_e3ejs")
 upper_fade = 1e-05

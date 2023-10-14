@@ -1,6 +1,7 @@
 extends Node
 
 const BulletHole = preload("res://scenes/bullet_hole.tscn")
+const BulletScene = preload("res://scenes/bullet.tscn")
 
 @export var gun_list = {
 	"Pistol" = {
@@ -39,23 +40,32 @@ const BulletHole = preload("res://scenes/bullet_hole.tscn")
 	}
 }
 
+@export var max_bullet_holes : int = 64
+
 static var Map = null
 static var Player : CharacterBody3D = null
 static var FireRateTimer : Timer = Timer.new()
-static var Bullet : RayCast3D = null
+static var Camera : Camera3D = null
+static var bullet_holes = []
 
 func _setup(player_ref):
 	Player = player_ref
 	Player.add_child(FireRateTimer)
+	Camera = Player.get_node("Head/Camera")
 	FireRateTimer.one_shot = true
-	Bullet = Player.get_node("Head/Camera/Bullet")
 	Map = Player.get_node("/root/Game/3D/World").get_node(Player.get_node("/root/Game/3D/World").get_meta("map"))
 	update_gun(0)
 	
-func spawn_bullet_hole(parent):
+func spawn_bullet_hole(parent, position, normal):
+	if bullet_holes.size() - 1 > max_bullet_holes:
+		bullet_holes.pop_front().queue_free()
+		
 	var new_bullet_Hole = BulletHole.instantiate()
 	parent.add_child(new_bullet_Hole)
-	new_bullet_Hole.global_position = Bullet.get_collision_point()
+	new_bullet_Hole.global_position = position
+	new_bullet_Hole.look_at(position + normal, Vector3.UP)
+	new_bullet_Hole.rotation.x += 90 # JUST ADD A NODE3D PARENT TO THE BULLET HOLE THATS ROTATED 90* on the X
+	bullet_holes.append(new_bullet_Hole)
 
 func fire(wait_time, animation_name, damage):
 	if FireRateTimer.time_left == 0 and Player.equipped_weapons[Player.weapons_slot][1] != 0:
@@ -64,13 +74,23 @@ func fire(wait_time, animation_name, damage):
 		FireRateTimer.wait_time = wait_time
 		FireRateTimer.start()
 		
-		Bullet.target_position = Vector3(randf_range(-0.5, 0.5), randf_range(-0.5, 0.5), -50)
-		if Bullet.is_colliding():
-			var collider = Bullet.get_collider()
-			spawn_bullet_hole(collider)
+		var newBullet = BulletScene.instantiate()
+		Camera.add_child(newBullet)
+		newBullet.target_position = Vector3(randf_range(-0.5, 0.5), randf_range(-0.5, 0.5), -50)
+		newBullet.force_raycast_update()
+		
+		print(newBullet)
+		print(newBullet.get_parent())
+		print(newBullet.is_colliding())
+		print(newBullet.position)
+		if newBullet.is_colliding():
+			var collider = newBullet.get_collider()
+			spawn_bullet_hole(collider, newBullet.get_collision_point(), newBullet.get_collision_normal())
 			
 			if collider.has_meta("enemy"):
-				Bullet.get_collider().call("_damage", damage)
+				newBullet.get_collider().call("_damage", damage)
+				
+		newBullet.queue_free()
 			
 		var head_rotation = Player.get_node("Head").rotation
 		head_rotation.x += randf_range(0, 0.035)

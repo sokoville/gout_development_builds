@@ -108,6 +108,18 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("slot3"):
 		mGuns.update_gun(2)
+	
+	if Input.is_action_just_released("slot_up"):
+		if weapons_slot < equipped_weapons.size() - 1:
+			mGuns.update_gun(weapons_slot + 1)
+		else:
+			mGuns.update_gun(0)
+	
+	if Input.is_action_just_released("slot_down"):
+		if weapons_slot != 0:
+			mGuns.update_gun(weapons_slot - 1)
+		else:
+			mGuns.update_gun(equipped_weapons.size() - 1)
 		
 	GunCam.global_transform = Camera.global_transform
 
@@ -123,10 +135,12 @@ func _physics_process(delta):
 	if Input.is_action_pressed("crouch"):
 		CollisionShape.shape.height = 0.9
 		Head.position.y = 0.3
+		Hand.position.y = -0.2 # BAD HEIGHT 
 		crouched = true
 	else:
 		if not HeadCheck.is_colliding():
 			Head.position.y = 0.6
+			Hand.position.y = -0.275
 			if crouched:
 				self.position.y += .5 # HACKY SOLUTION TO GETTING STUCK IN THE GROUND FIX LATER
 				CollisionShape.shape.height = 1.8
@@ -157,7 +171,7 @@ func _physics_process(delta):
 		
 	head_bob_time += velocity.length() * float(is_on_floor()) * delta
 	Head.position.y = Head.position.y + calculate_headbob("camera")
-	Hand.position.y = -0.275 + calculate_headbob("gun")
+	Hand.position.y = Hand.position.y + calculate_headbob("gun")
 	
 	current_speed = velocity.length()
 		

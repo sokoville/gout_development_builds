@@ -34,10 +34,6 @@ current = true
 [node name="InteractionCheck" type="RayCast3D" parent="Head/Camera"]
 target_position = Vector3(0, 0, -2)
 
-[node name="Bullet" type="RayCast3D" parent="Head/Camera"]
-target_position = Vector3(0, 0, -50)
-collision_mask = 5
-
 [node name="Hand" type="Node3D" parent="Head/Camera"]
 transform = Transform3D(-0.052328, 0.000913388, 0.998629, 0.0174524, 0.999848, 0, -0.998477, 0.0174285, -0.0523359, 0.315, -0.275, -0.5)
 
