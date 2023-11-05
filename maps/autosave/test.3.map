@@ -1,0 +1,45 @@
+// Game: Gout
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_def" "builtin:QodotDemoEntities.fgd"
+"_tb_textures" "textures/map_textures"
+"_tb_mod" "textures"
+// brush 0
+{
+( -32 48 32 ) ( -32 -16 32 ) ( -32 -16 16 ) map_textures/metal1 -40 -40 0 0.2 0.2
+( -32 -16 32 ) ( 16 -16 32 ) ( 16 -16 16 ) map_textures/metal1 0 0 0 0.2 0.2
+( 16 -16 16 ) ( 16 48 16 ) ( -32 48 16 ) map_textures/metal1 0 0 0 0.2 0.2
+( -32 48 32 ) ( 16 48 32 ) ( 16 -16 32 ) map_textures/metal1 0 0 0 0.2 0.2
+( 16 48 16 ) ( 16 48 32 ) ( -32 48 32 ) map_textures/metal1 0 0 0 0.2 0.2
+( 16 -16 32 ) ( 16 48 32 ) ( 16 48 16 ) map_textures/metal1 0 0 0 0.2 0.2
+}
+// brush 1
+{
+( -64 144 16 ) ( -64 -64 16 ) ( -64 -64 -16 ) map_textures/grass1 0 0 0 0.2 0.2
+( -64 -64 16 ) ( 64 -64 16 ) ( 64 -64 -16 ) map_textures/grass1 0 0 0 0.2 0.2
+( 64 -64 -16 ) ( 64 144 -16 ) ( -64 144 -16 ) map_textures/grass1 0 0 0 0.2 0.2
+( -64 144 16 ) ( 64 144 16 ) ( 64 -64 16 ) map_textures/grass1 0 0 0 0.2 0.2
+( 64 144 -16 ) ( 64 144 16 ) ( -64 144 16 ) map_textures/grass1 0 0 0 0.2 0.2
+( 64 -64 16 ) ( 64 144 16 ) ( 64 144 -16 ) map_textures/grass1 0 0 0 0.2 0.2
+}
+// brush 2
+{
+( 21 -48 48 ) ( 21 -64 48 ) ( 21 -64 16 ) map_textures/grass1 0 0 0 0.25 0.25
+( 21 -64 48 ) ( 22 -64 48 ) ( 22 -64 16 ) map_textures/grass1 0 0 0 0.25 0.25
+( 22 -64 16 ) ( 22 -48 16 ) ( 21 -48 16 ) map_textures/grass1 0 0 0 0.25 0.25
+( 21 -48 48 ) ( 22 -48 48 ) ( 22 -64 48 ) map_textures/grass1 0 0 0 0.25 0.25
+( 22 -48 16 ) ( 22 -48 48 ) ( 21 -48 48 ) map_textures/grass1 0 0 0 0.25 0.25
+( 22 -64 48 ) ( 22 -48 48 ) ( 22 -48 16 ) map_textures/grass1 0 0 0 0.25 0.25
+}
+// brush 3
+{
+( -32 -25 16 ) ( -32 -24 16 ) ( -32 -25 17 ) map_textures/grass1 0 0 0 0.25 0.25
+( -32 -25 16 ) ( -32 -25 17 ) ( -31 -25 16 ) map_textures/grass1 0 0 0 0.25 0.25
+( -32 -25 16 ) ( -31 -25 16 ) ( -32 -24 16 ) map_textures/grass1 0 0 0 0.25 0.25
+( 16 -24 28 ) ( 16 -23 28 ) ( 17 -24 28 ) map_textures/grass1 0 0 0 0.25 0.25
+( 16 -24 28 ) ( 17 -24 28 ) ( 16 -24 29 ) map_textures/grass1 0 0 0 0.25 0.25
+( 16 -24 28 ) ( 16 -24 29 ) ( 16 -23 28 ) map_textures/grass1 0 0 0 0.25 0.25
+}
+}

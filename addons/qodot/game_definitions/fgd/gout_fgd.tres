@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=3 format=3 uid="uid://yod0aajtec8l"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="1_secix"]
+[ext_resource type="Resource" uid="uid://b70dbh5v15xno" path="res://addons/qodot/game_definitions/fgd/solid_classes/trigger_solid_class.tres" id="1_uxi3m"]
+
+[resource]
+script = ExtResource("1_secix")
+export_file = false
+target_folder = "C:/Users/joshb_000/Downloads/Trench/games/Gout"
+fgd_name = "gout_base"
+base_fgd_files = Array[Resource]([])
+entity_definitions = Array[Resource]([ExtResource("1_uxi3m")])

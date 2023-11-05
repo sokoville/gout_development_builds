@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://tt2kdltx42jm"]
+[gd_scene load_steps=6 format=3 uid="uid://tt2kdltx42jm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1mysk"]
+[ext_resource type="PackedScene" uid="uid://uwduv8yqjdgv" path="res://scenes/systems/player_ui.tscn" id="2_k6nn8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61e0k"]
 radius = 0.3
@@ -32,7 +33,7 @@ cull_mask = 1048573
 current = true
 
 [node name="InteractionCheck" type="RayCast3D" parent="Head/Camera"]
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -2.5)
 
 [node name="Hand" type="Node3D" parent="Head/Camera"]
 transform = Transform3D(-0.052328, 0.000913388, 0.998629, 0.0174524, 0.999848, 0, -0.998477, 0.0174285, -0.0523359, 0.315, -0.275, -0.5)
@@ -67,3 +68,5 @@ target_position = Vector3(0, 0.5, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_rs3lh")
+
+[node name="UI" parent="." instance=ExtResource("2_k6nn8")]

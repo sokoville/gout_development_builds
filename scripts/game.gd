@@ -1,5 +1,7 @@
 extends Node
 
+@onready var WorldNode := get_node("3D/World")
+
 @export var app_name : String = "Gout"
 @export var version : String = "devtest1"
 @export var engine_version : String = "ERR engine_version not loaded"
@@ -12,13 +14,13 @@ func _init():
 func _ready():
 	var debug = ""
 	if OS.is_debug_build():
-		debug = " DEBUG_BUILD"
+		debug = "DEBUG_BUILD"
 		
 	if OS.has_feature("editor"):
 		var date = Time.get_date_dict_from_system()
 		version = "devtest" + str(date.day) + str(date.month) + str(date.year - 2000) + " " + Time.get_time_string_from_system()
 		
-	var window_title = (app_name + " " + version + debug + " / " + engine_version + " / " + renderer_version)
+	var window_title = (app_name + " " + version + " " + debug + " / " + engine_version + " / " + renderer_version)
 	
 	DisplayServer.window_set_title(window_title)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -29,3 +31,9 @@ func _input(_event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			
+	if Input.is_action_just_pressed("map1"):
+		WorldNode.load_map("test_map.tscn")
+	elif Input.is_action_just_pressed("map2"):
+		WorldNode.load_map("test_map2.tscn")
+	

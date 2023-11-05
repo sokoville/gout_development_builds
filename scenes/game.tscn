@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://r1cf2ksrwfo5"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_0iwee"]
-[ext_resource type="PackedScene" uid="uid://b0jgxih4kgnpg" path="res://scenes/ui.tscn" id="2_3230r"]
-[ext_resource type="PackedScene" uid="uid://buttoxasi8li3" path="res://scenes/test_map.tscn" id="2_hutsk"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="2_4kvt2"]
+[ext_resource type="PackedScene" uid="uid://b0jgxih4kgnpg" path="res://scenes/systems/ui.tscn" id="2_3230r"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_0iwee")
-version = "devtest101023 (guns)"
+version = "devtest041123"
 
 [node name="3D" type="CanvasLayer" parent="."]
 
 [node name="World" type="Node3D" parent="3D"]
-metadata/map = NodePath("TestMap")
-
-[node name="TestMap" parent="3D/World" instance=ExtResource("2_hutsk")]
+script = ExtResource("2_4kvt2")
+metadata/map = NodePath("")
+metadata/player_spawned = false
 
 [node name="2D" type="CanvasLayer" parent="."]
 

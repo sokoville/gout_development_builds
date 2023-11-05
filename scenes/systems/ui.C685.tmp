@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0jgxih4kgnpg"]
+
+[ext_resource type="Script" path="res://scripts/debug_info.gd" id="1_2kj5c"]
+[ext_resource type="Theme" uid="uid://cy4h3nm6n4xvf" path="res://resources/themes/debug_text.tres" id="2_reweu"]
+[ext_resource type="Script" path="res://scripts/crosshair.gd" id="3_sh08o"]
+[ext_resource type="Theme" uid="uid://drsrpo8fhem3n" path="res://resources/themes/title_text.tres" id="4_k8mkn"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DebugInfo" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 810.0
+offset_bottom = 410.0
+script = ExtResource("1_2kj5c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/DebugInfo"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 400.0
+theme_override_constants/separation = 2
+
+[node name="DebugInfoTitle" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Cool Stuff for Nerds:
+"
+fit_content = true
+
+[node name="GameTitle" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+bbcode_enabled = true
+text = "ERR GameTitle not loaded"
+fit_content = true
+
+[node name="FPSCounter" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+text = "ERR FPSCounter not loaded"
+fit_content = true
+
+[node name="MemoryUsage" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="VRamUsage" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="ObjectCount" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="CurrentMap" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="PlayerPosition" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="EquippedWeapons" type="RichTextLabel" parent="Control/DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_reweu")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="Crosshair" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0001
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 0.36)
+script = ExtResource("3_sh08o")
+
+[node name="AnnoucementHBox" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -110.0
+offset_right = 640.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnnouncementText" type="RichTextLabel" parent="Control/AnnoucementHBox"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("4_k8mkn")
+fit_content = true
+autowrap_mode = 0
+
+[node name="BugReport" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.0
+offset_top = 10.0
+offset_right = 207.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme = ExtResource("2_reweu")
+text = "Report Bugs to Discord user \"iminthecut\" or by email at mbogen@tutanota.de
+"

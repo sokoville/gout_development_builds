@@ -1,5 +1,14 @@
-[gd_resource type="Environment" format=3 uid="uid://b61umlxxqrm84"]
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://b61umlxxqrm84"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w7r2q"]
+
+[sub_resource type="Sky" id="Sky_kow1d"]
+sky_material = SubResource("ProceduralSkyMaterial_w7r2q")
 
 [resource]
+background_mode = 2
+sky = SubResource("Sky_kow1d")
+ambient_light_source = 3
+reflected_light_source = 2
 fog_enabled = true
 fog_density = 0.02

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://by4invvdm8x52"]
-
-[ext_resource type="Texture2D" uid="uid://bvche6ui8tqw" path="res://textures/bullet_hole.png" id="1_e3ejs"]
-
-[node name="BulletHole" type="Decal"]
-size = Vector3(0.1, 0.1, 0.1)
-texture_albedo = ExtResource("1_e3ejs")
-upper_fade = 1e-05
-lower_fade = 1e-05

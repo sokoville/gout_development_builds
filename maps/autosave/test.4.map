@@ -1,0 +1,27 @@
+// Game: Gout
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_def" "builtin:QodotQuakeCompat.fgd"
+"_tb_textures" "textures/map_textures"
+"_tb_mod" "textures"
+// brush 0
+{
+( -32 48 32 ) ( -32 -16 32 ) ( -32 -16 16 ) map_textures/metal1 -40 -40 0 0.125 0.125
+( -32 -16 32 ) ( 16 -16 32 ) ( 16 -16 16 ) map_textures/metal1 0 0 0 0.125 0.125
+( 16 -16 16 ) ( 16 48 16 ) ( -32 48 16 ) map_textures/metal1 0 0 0 0.125 0.125
+( -32 48 32 ) ( 16 48 32 ) ( 16 -16 32 ) map_textures/metal1 0 0 0 0.125 0.125
+( 16 48 16 ) ( 16 48 32 ) ( -32 48 32 ) map_textures/metal1 0 0 0 0.125 0.125
+( 16 -16 32 ) ( 16 48 32 ) ( 16 48 16 ) map_textures/metal1 0 0 0 0.125 0.125
+}
+// brush 1
+{
+( -64 144 16 ) ( -64 -64 16 ) ( -64 -64 -16 ) map_textures/grass1 0 0 0 0.125 0.125
+( -64 -64 16 ) ( 64 -64 16 ) ( 64 -64 -16 ) map_textures/grass1 0 0 0 0.125 0.125
+( 64 -64 -16 ) ( 64 144 -16 ) ( -64 144 -16 ) map_textures/grass1 0 0 0 0.125 0.125
+( -64 144 16 ) ( 64 144 16 ) ( 64 -64 16 ) map_textures/grass1 0 0 0 0.125 0.125
+( 64 144 -16 ) ( 64 144 16 ) ( -64 144 16 ) map_textures/grass1 0 0 0 0.125 0.125
+( 64 -64 16 ) ( 64 144 16 ) ( 64 144 -16 ) map_textures/grass1 0 0 0 0.125 0.125
+}
+}

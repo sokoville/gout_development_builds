@@ -1,0 +1,182 @@
+[gd_scene load_steps=5 format=3 uid="uid://uwduv8yqjdgv"]
+
+[ext_resource type="Script" path="res://scripts/debug_info.gd" id="1_n43re"]
+[ext_resource type="Theme" uid="uid://cy4h3nm6n4xvf" path="res://resources/themes/debug_text.tres" id="2_4l3py"]
+[ext_resource type="Script" path="res://scripts/crosshair.gd" id="3_uueqx"]
+[ext_resource type="Script" path="res://scripts/status_indicators.gd" id="4_1crur"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="DebugInfo" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 810.0
+offset_bottom = 410.0
+script = ExtResource("1_n43re")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugInfo"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 400.0
+theme_override_constants/separation = 2
+
+[node name="DebugInfoTitle" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Cool Stuff for Nerds:
+"
+fit_content = true
+
+[node name="GameTitle" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+bbcode_enabled = true
+text = "ERR GameTitle not loaded"
+fit_content = true
+
+[node name="FPSCounter" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+text = "ERR FPSCounter not loaded"
+fit_content = true
+
+[node name="MemoryUsage" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="VRamUsage" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="ObjectCount" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="CurrentMap" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="PlayerPosition" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="EquippedWeapons" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_4l3py")
+text = "ERR MemoryUsage not loaded"
+fit_content = true
+
+[node name="Crosshair" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0001
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 0.36)
+script = ExtResource("3_uueqx")
+
+[node name="Status" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_1crur")
+
+[node name="Ammo" type="Control" parent="Status"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Counter" type="RichTextLabel" parent="Status/Ammo"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 20
+text = "9/10"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Health" type="Control" parent="Status"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ArmourCounter" type="RichTextLabel" parent="Status/Health"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -14.0
+offset_right = 79.0
+offset_bottom = 14.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "A: 100
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HealthCounter" type="RichTextLabel" parent="Status/Health"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -14.0
+offset_right = -20.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "H: 100"
+fit_content = true
+autowrap_mode = 0

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://3ddmc2l4egad"]
+
+[ext_resource type="Texture2D" uid="uid://dr7w7yfiovjsa" path="res://textures/pump_shotgun.png" id="1_oip45"]
+
+[resource]
+albedo_texture = ExtResource("1_oip45")
+texture_filter = 0

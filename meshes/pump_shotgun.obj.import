@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ombstiavelrq"
+path="res://.godot/imported/pump_shotgun.obj-12292b8c27f1e5cf35eef10c0d45e332.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pump_shotgun.obj-12292b8c27f1e5cf35eef10c0d45e332.mesh"]
+
+source_file="res://meshes/pump_shotgun.obj"
+dest_files=["res://.godot/imported/pump_shotgun.obj-12292b8c27f1e5cf35eef10c0d45e332.mesh", "res://.godot/imported/pump_shotgun.obj-12292b8c27f1e5cf35eef10c0d45e332.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
