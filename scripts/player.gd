@@ -9,10 +9,10 @@ var mGuns = null
 @export var movemement_acceleration = DEFAULT_MOVEMENT_ACCELERATION
 @export var mouse_sens = 0.05
 @export var controller_sens = 0.05
-@export var health = 100
+@export var health = 50
 @export var armour = 0
 @export var current_speed = 0
-@export var equipped_weapons = [["MP5", 30], ["Pistol", 15], ["PumpShotgun", 6], ["empty", -1], ["empty", -1]]
+@export var equipped_weapons = [["MP5", 30], ["Pistol", 15], ["empty", 0], ["empty", 0], ["empty", 0]]
 @export var weapons_slot = -1
 @export var ammo = {"pistol_ammo" = 100, "shotgun_ammo" = 12, "inf" = -1}
 @export var current_ammo_type = "smg_ammo"
@@ -68,10 +68,13 @@ func handle_joypad_motion():
 func reload(should_animate):
 	mGuns.handle_reload(should_animate)
 
+func switch_gun(slot):
+	mGuns.update_gun(slot)
+
 func _ready():
 	mGuns = Guns_Script.new()
 	mGuns._setup(self)
-	StatusUI.update_health(100, 100)
+	StatusUI.update_health(health, armour)
 		
 func _input(event):
 	#Turns the camera with the mouse movement

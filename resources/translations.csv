@@ -1,5 +1,11 @@
-id,en,nl
-Memory: ,Memory: ,Geheugen: 
-Video Memory: ,Video Memory: ,Videogeheugen: 
-Object Count: ,Object Count: ,Object Tel: 
- (Physics Objects: , (Physics Objects: , (Fysica Objecten: 
+id,en,nl,ru
+Memory: ,Memory: ,Geheugen: ,Память: 
+Video Memory: ,Video Memory: ,Videogeheugen: ,Видеопамять: 
+Object Count: ,Object Count: ,Object tel: ,Количество объектов: 
+Physics Objects: ,Physics Objects: ,Fysica objecten: ,Физические объекты:  
+Current Map: ,Current Map: ,Huidige kaart: ,Текущая карта: 
+Player Position: ,Player Position: ,Dutch version,Местоположение игрока: 
+Player Speed: ,Player Speed: ,Dutch version,Скорость игрока: 
+Equipped Weapon: ,Equipped Weapon: ,Equipped Weapon: dutch,Оснащенное оружие: 
+empty,empty,leeg,пустой
+Cool Stuff for Nerds:,Cool Stuff for Nerds:,Cool Stuff for Nerds: dutch,Классная штука для ботаников

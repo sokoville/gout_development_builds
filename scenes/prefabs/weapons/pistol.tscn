@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://dp88ysb3vyffm"]
+[gd_scene load_steps=24 format=3 uid="uid://dp88ysb3vyffm"]
 
 [ext_resource type="Material" uid="uid://r2sddx7acepx" path="res://materials/USP.tres" id="1_ilwu4"]
+[ext_resource type="Script" path="res://scripts/weapon_model.gd" id="1_odnv4"]
 [ext_resource type="Material" uid="uid://tg2thj3keo6n" path="res://materials/USP_mag.tres" id="2_r1yfh"]
 [ext_resource type="Material" uid="uid://r30dd1lkxruk" path="res://materials/vents.tres" id="3_ibn53"]
 [ext_resource type="Material" uid="uid://dktkhyvt0xie6" path="res://materials/arms.tres" id="4_cl85r"]
@@ -418,6 +419,9 @@ bind/45/pose = Transform3D(0.899015, 0.023108, 0.437308, 0.324817, 0.634575, -0.
 
 [node name="Pistol" type="Node3D"]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+script = ExtResource("1_odnv4")
+metadata/name = "Pistol"
+metadata/mag_size = 15
 
 [node name="USPBody" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, -4.37114e-06, 4.37114e-06, 1.91068e-13, 99.9999, 0, -99.9999, 1.91068e-13, 0.575102, 0.4772, 0.0047182)
@@ -458,6 +462,7 @@ libraries = {
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 transform = Transform3D(0.0359228, 0, 0.498708, 0.314246, 0.388249, -0.0226357, -0.387245, 0.31506, 0.027894, -0.352816, 0.660724, -0.991156)
+visible = false
 bones/0/name = "L_arm"
 bones/0/parent = -1
 bones/0/rest = Transform3D(-0.908522, -0.0341731, -0.416436, -0.327237, 0.677916, 0.65829, 0.259813, 0.734344, -0.627085, 3.06345, 0.984334, -9.08458)

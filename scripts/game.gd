@@ -29,8 +29,10 @@ func _input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			get_tree().paused = true
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			get_tree().paused = false
 			
 	if Input.is_action_just_pressed("map1"):
 		WorldNode.load_map("test_map.tscn")

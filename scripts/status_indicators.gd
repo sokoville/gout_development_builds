@@ -1,8 +1,8 @@
 extends Control
 
 @onready var AmmoCounter = $Ammo/Counter
-@onready var ArmourCounter = $Health/ArmourCounter
-@onready var HealthCounter = $Health/HealthCounter
+@onready var ArmourCounter = $Health/ArmourCounter/Counter
+@onready var HealthCounter = $Health/HealthCounter/Counter
 
 func update_ammo(current_ammo, max_ammo):
 	AmmoCounter.clear()
@@ -16,5 +16,5 @@ func update_health(health, armour):
 	ArmourCounter.clear()
 	HealthCounter.clear()
 	
-	HealthCounter.add_text("H: " + str(health))
-	ArmourCounter.add_text("A: " + str(armour))
+	HealthCounter.add_text(str(health))
+	ArmourCounter.add_text(str(armour))

@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://uwduv8yqjdgv"]
+[gd_scene load_steps=7 format=3 uid="uid://uwduv8yqjdgv"]
 
 [ext_resource type="Script" path="res://scripts/debug_info.gd" id="1_n43re"]
 [ext_resource type="Theme" uid="uid://cy4h3nm6n4xvf" path="res://resources/themes/debug_text.tres" id="2_4l3py"]
 [ext_resource type="Script" path="res://scripts/crosshair.gd" id="3_uueqx"]
 [ext_resource type="Script" path="res://scripts/status_indicators.gd" id="4_1crur"]
+[ext_resource type="Texture2D" uid="uid://fs41exjxm0uu" path="res://textures/health.png" id="5_u0r1m"]
+[ext_resource type="Texture2D" uid="uid://cujlg5kgjrtst" path="res://textures/armor.png" id="6_p5xyy"]
 
 [node name="UI" type="CanvasLayer"]
 
 [node name="DebugInfo" type="Control" parent="."]
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -28,8 +31,7 @@ layout_mode = 2
 theme = ExtResource("2_4l3py")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "Cool Stuff for Nerds:
-"
+text = "Cool Stuff for Nerds:"
 fit_content = true
 
 [node name="GameTitle" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
@@ -54,31 +56,31 @@ fit_content = true
 [node name="VRamUsage" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4l3py")
-text = "ERR MemoryUsage not loaded"
+text = "ERR VideoMemoryUsage not loaded"
 fit_content = true
 
 [node name="ObjectCount" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4l3py")
-text = "ERR MemoryUsage not loaded"
+text = "ERR ObjectCount not loaded"
 fit_content = true
 
 [node name="CurrentMap" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4l3py")
-text = "ERR MemoryUsage not loaded"
+text = "ERR CurrentMap not loaded"
 fit_content = true
 
 [node name="PlayerPosition" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4l3py")
-text = "ERR MemoryUsage not loaded"
+text = "ERR PlayerPosition not loaded"
 fit_content = true
 
 [node name="EquippedWeapons" type="RichTextLabel" parent="DebugInfo/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4l3py")
-text = "ERR MemoryUsage not loaded"
+text = "ERR EquippedWeapons not loaded"
 fit_content = true
 
 [node name="Crosshair" type="TextureRect" parent="."]
@@ -97,6 +99,7 @@ scale = Vector2(0.36, 0.36)
 script = ExtResource("3_uueqx")
 
 [node name="Status" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
@@ -147,23 +150,7 @@ offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ArmourCounter" type="RichTextLabel" parent="Status/Health"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = -14.0
-offset_right = 79.0
-offset_bottom = 14.0
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "A: 100
-"
-fit_content = true
-autowrap_mode = 0
-
-[node name="HealthCounter" type="RichTextLabel" parent="Status/Health"]
+[node name="HealthCounter" type="TextureRect" parent="Status/Health"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -172,11 +159,57 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -80.0
 offset_top = -14.0
-offset_right = -20.0
-offset_bottom = 14.0
+offset_right = -60.0
+offset_bottom = 6.0
 grow_horizontal = 0
 grow_vertical = 2
+texture = ExtResource("5_u0r1m")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Counter" type="RichTextLabel" parent="Status/Health/HealthCounter"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -15.0
+offset_right = 85.0
+offset_bottom = 15.0
+grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 20
-text = "H: 100"
+text = "100"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ArmourCounter" type="TextureRect" parent="Status/Health"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -14.0
+offset_right = 41.0
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("6_p5xyy")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Counter" type="RichTextLabel" parent="Status/Health/ArmourCounter"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -15.0
+offset_right = 85.0
+offset_bottom = 15.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "100"
 fit_content = true
 autowrap_mode = 0

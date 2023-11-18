@@ -12,6 +12,8 @@ config_version=5
 
 config/name="gout 4.1"
 run/main_scene="res://scenes/game.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="gout"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.png"
@@ -192,7 +194,8 @@ controller_look_left={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://resources/translations.en.translation", "res://resources/translations.nl.translation")
+locale/translations=PackedStringArray("res://resources/translations.en.translation", "res://resources/translations.nl.translation", "res://resources/translations.ru.translation")
+locale/test="ru"
 
 [layer_names]
 

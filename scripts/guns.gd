@@ -79,6 +79,8 @@ var Camera : Camera3D = null
 var World : Node3D = null
 var StatusUI = null
 
+var recoil_to_inact = 0
+
 func _setup(player_ref):
 	Player = player_ref
 	Player.add_child(FireRateTimer)
@@ -197,6 +199,7 @@ func update_gun(slot):
 		
 		if gun_to_equip != "empty":
 			var newGun = gun_list[gun_to_equip].model.instantiate()
+			newGun.setup("viewmodel")
 			Player.get_node("Head/Camera/Hand").add_child(newGun)
 			Player.current_ammo_type = gun_list[gun_to_equip].ammo_type
 			StatusUI.update_ammo(Player.equipped_weapons[slot][1], Player.ammo[gun_list[Player.equipped_weapons[slot][0]].ammo_type])

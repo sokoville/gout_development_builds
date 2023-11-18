@@ -9,11 +9,9 @@ var gun_crosshair = preload("res://textures/crosshair_gun.png")
 @onready var World : Node3D = Player.get_parent()
 
 func _process(_delta):
-	if InteractionCheck.is_colliding() and InteractionCheck.get_collider() != null:
-			if InteractionCheck.get_collider().has_meta("interactable"):
-				texture = hand_crosshair
+	if InteractionCheck.is_colliding() and InteractionCheck.get_collider() != null and InteractionCheck.get_collider().has_meta("interactable"):
+		texture = hand_crosshair
+	elif Player.equipped_weapons[Player.weapons_slot][0] != "empty":
+		texture = gun_crosshair
 	else:
-		if Player.equipped_weapons[Player.weapons_slot][0] != "empty":
-			texture = gun_crosshair
-		else:
-			texture = null
+		texture = null

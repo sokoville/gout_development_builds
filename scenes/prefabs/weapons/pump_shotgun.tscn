@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://4ohxeniyda8y"]
+[gd_scene load_steps=13 format=3 uid="uid://4ohxeniyda8y"]
 
+[ext_resource type="Script" path="res://scripts/weapon_model.gd" id="1_gpecx"]
 [ext_resource type="Material" uid="uid://r30dd1lkxruk" path="res://materials/vents.tres" id="2_ch5f0"]
 [ext_resource type="ArrayMesh" uid="uid://ombstiavelrq" path="res://meshes/pump_shotgun.obj" id="3_hwagw"]
 [ext_resource type="Material" uid="uid://dktkhyvt0xie6" path="res://materials/arms.tres" id="3_tmrge"]
@@ -227,6 +228,9 @@ albedo_color = Color(1, 1, 1, 0)
 
 [node name="PumpShotgun" type="Node3D"]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+script = ExtResource("1_gpecx")
+metadata/name = "PumpShotgun"
+metadata/mag_size = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -235,6 +239,7 @@ libraries = {
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 transform = Transform3D(0.0359228, -3.72529e-08, 0.498708, 0.314246, 0.388249, -0.0226357, -0.387245, 0.31506, 0.027894, -1.12818, -0.421893, -1.03181)
+visible = false
 bones/0/name = "L_arm"
 bones/0/parent = -1
 bones/0/rest = Transform3D(-0.908522, -0.0341731, -0.416436, -0.327237, 0.677916, 0.65829, 0.259813, 0.734344, -0.627085, 3.06345, 0.984334, -9.08458)
