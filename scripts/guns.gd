@@ -103,7 +103,7 @@ func spawn_bullet_hole(parent, position, normal):
 	new_bullet_Hole.rotation.x += 90
 	World.bullet_holes.append(new_bullet_Hole)
 
-func fire_sound(weapon_info):
+func fire_sound(_weapon_info):
 	var audio_player = AudioStreamPlayer3D.new()
 	Player.add_child(audio_player)
 	audio_player.stream = load("res://resources/sounds/pistol_shoot.wav")

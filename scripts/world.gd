@@ -11,7 +11,8 @@ func despawn_player():
 		self.set_meta("player_spawned", false)
 
 func clear_map():
-	if self.get_child(0) != null:
+	if self.get_child_count() != 0:
+		bullet_holes = []
 		self.set_meta("map", "")
 		self.get_child(0).queue_free()
 

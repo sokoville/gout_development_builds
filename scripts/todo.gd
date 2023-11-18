@@ -28,3 +28,6 @@
 ### FIXES
 # - Fixed map names not updating in the debug menu.
 # - Fixed health and armour counters always updating to 100.
+# - Fixed an issue where guns in motion weren't removed properly when the map was switched.
+# - Improved the way maps are cleared.
+# - The bullet sounds function no longer create multiple errors everytime the gun is fired.

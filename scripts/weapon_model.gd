@@ -1,6 +1,7 @@
 extends Node3D
 
 var state = null
+var spin_tween = null
 
 func set_visibility_layer(layer : int):
 	for child in self.get_children():
@@ -34,9 +35,13 @@ func setup(setup_state : String):
 		pickup_area.set_collision_mask_value(1, false)
 		pickup_area.set_collision_mask_value(2, true)
 		set_visibility_layer(1)
-		var tween = get_tree().create_tween()
-		tween.set_loops()
-		tween.tween_property(self, "rotation_degrees", Vector3(self.rotation_degrees.x, 360, self.rotation_degrees.z), 2.5).as_relative()
+		spin_tween = get_tree().create_tween()
+		spin_tween.set_loops()
+		spin_tween.tween_property(self, "rotation_degrees", Vector3(self.rotation_degrees.x, 360, self.rotation_degrees.z), 2.5).as_relative()
+
+func _exit_tree():
+	if spin_tween != null:
+		spin_tween.kill()
 		
 func _ready():
 	if not self.get_parent().get_parent().is_class("Camera3D"):
