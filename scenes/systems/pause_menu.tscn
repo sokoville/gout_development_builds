@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce123aimdnmst"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_qxv6u"]
+[ext_resource type="Theme" uid="uid://eroh2eg1tdhm" path="res://resources/themes/pause_menu_text.tres" id="2_1lehn"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxv6u")
+
+[node name="TempSettings" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="LanguageSelect" type="OptionButton" parent="TempSettings"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+item_count = 3
+selected = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Nederlands"
+popup/item_1/id = 1
+popup/item_2/text = "Русский"
+popup/item_2/id = 2
+
+[node name="List" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -173.0
+offset_right = 213.0
+offset_bottom = -60.0
+grow_vertical = 0
+
+[node name="QuitButton" type="Button" parent="List"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_right = 34.0
+grow_vertical = 0
+theme = ExtResource("2_1lehn")
+text = "Quit"
+
+[node name="ResumeButton" type="Button" parent="List"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 34.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme = ExtResource("2_1lehn")
+text = "Resume"
+
+[connection signal="item_selected" from="TempSettings/LanguageSelect" to="." method="_on_language_select_item_selected"]
+[connection signal="pressed" from="List/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="List/ResumeButton" to="." method="_on_resume_button_pressed"]

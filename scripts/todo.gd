@@ -13,6 +13,7 @@
 # - Fix the bug where bullet holes shot down are stretched and not fully transparent
 # - Fix the player getting stuck in doors when you become collidable again
 # - Fix camera and interactiosn not working with controller 
+# - Window title not updating
 
 
 #### FINISHED IN THE MOST RECENT UPDATE
@@ -21,6 +22,9 @@
 # - Gun pick up system.
 # - Health and armour icons (temporary versions).
 # - Partial Russian and Dutch translations.
+# - Global settings infrastructure (currently only saves locale).
+# - Saved configuration file.
+# - Pause menu.
 
 ### CHANGES
 # - Debug map names now load from a map_name metadata on the map instead of the map node's name.
@@ -28,6 +32,7 @@
 ### FIXES
 # - Fixed map names not updating in the debug menu.
 # - Fixed health and armour counters always updating to 100.
+# - Fixed health and armour counters always updating to 100... again.
 # - Fixed an issue where guns in motion weren't removed properly when the map was switched.
 # - Improved the way maps are cleared.
 # - The bullet sounds function no longer create multiple errors everytime the gun is fired.

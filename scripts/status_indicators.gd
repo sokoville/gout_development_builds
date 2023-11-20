@@ -13,8 +13,7 @@ func update_ammo(current_ammo, max_ammo):
 			AmmoCounter.add_text(str(current_ammo))
 	
 func update_health(health, armour):
-	ArmourCounter.clear()
-	HealthCounter.clear()
+	print(health, armour)
 	
-	HealthCounter.add_text(str(health))
-	ArmourCounter.add_text(str(armour))
+	HealthCounter.text = str(health)
+	ArmourCounter.text = str(armour)

@@ -38,8 +38,5 @@ func load_map(map_name):
 		else:
 			spawn_player(new_map)
 
-#func add_rain()
-
 func _ready():
-	load_map("test_map2.tscn")
-	#add_rain()
+	load_map("test_map.tscn")

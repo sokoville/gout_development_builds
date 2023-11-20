@@ -7,8 +7,6 @@ var mGuns = null
 @export var max_speed = DEFAULT_MAX_SPEED
 @export var jump_velocity = DEFAULT_JUMP_VELOCITY
 @export var movemement_acceleration = DEFAULT_MOVEMENT_ACCELERATION
-@export var mouse_sens = 0.05
-@export var controller_sens = 0.05
 @export var health = 50
 @export var armour = 0
 @export var current_speed = 0
@@ -27,6 +25,7 @@ var mGuns = null
 @onready var PlayerMesh : MeshInstance3D = $Mesh
 @onready var Hand : Node3D = $Head/Camera/Hand
 @onready var StatusUI = $UI/Status 
+@onready var Game : Node = get_node("/root/Game")
 
 const DEFAULT_JUMP_VELOCITY = 8.0
 const DEFAULT_MAX_SPEED = 8.0
@@ -53,15 +52,15 @@ func calculate_headbob(target):
 		return pos
 
 func handle_mouse_motion(event):
-	rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
-	Head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
+	rotate_y(deg_to_rad(-event.relative.x * Game.global_settings.mouse_sensitivity))
+	Head.rotate_x(deg_to_rad(-event.relative.y * Game.global_settings.mouse_sensitivity))
 	Head.rotation.x = clamp(Head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	return -event.relative.x
 	
 func handle_joypad_motion():
 	var motion = Input.get_vector("controller_look_left", "controller_look_right", "controller_look_down", "controller_look_up")
-	rotate_y(-motion.x*controller_sens)
-	Head.rotate_x(-motion.y*controller_sens)
+	rotate_y(-motion.x*Game.global_settings.controller_sensitivity)
+	Head.rotate_x(-motion.y*Game.global_settings.controller_sensitivit)
 	Head.rotation.x = clamp(Head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	return -motion.x
 
